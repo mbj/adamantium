@@ -142,7 +142,7 @@ private
   #
   # @api private
   def store_memory(name, value)
-    memory[name] = Immutable.freeze_object(value)
+    memory[name] = value
   end
 
   # Methods mixed in to immutable modules
@@ -242,7 +242,7 @@ private
     #
     # @api public
     def new(*)
-      IceNine.deep_freeze(super)
+      super.freeze
     end
 
   end # module ClassMethods
