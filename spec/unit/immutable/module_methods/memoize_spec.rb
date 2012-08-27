@@ -10,11 +10,6 @@ shared_examples_for 'memoizes method' do
     instance.send(method).should equal(instance.send(method))
   end
 
-  it 'creates a method that returns a frozen value' do
-    subject
-    object.new.send(method).should be_frozen
-  end
-
   specification = proc do
     subject
     file, line = object.new.send(method).first.split(':')[0, 2]

@@ -35,11 +35,6 @@ describe Immutable, '#memoize' do
       subject
       object.send(method).should eql(value)
     end
-
-    it 'creates a method that returns a frozen value' do
-      subject
-      object.send(method).should be_frozen
-    end
   end
 
   context 'when the method is already memoized' do
